@@ -1,0 +1,292 @@
+/* ======================================
+   ESTILOS PRINCIPALES PARA BANCO CARDONA
+   Archivo: styles.css
+   ====================================== */
+
+/* ========== RESET GENERAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== PALETA DE COLORES ========== */
+:root {
+  --azul: #003366;
+  --amarillo: #ffcc00;
+  --blanco: #ffffff;
+  --gris-claro: #f2f2f2;
+  --negro: #000000;
+}
+
+/* ========== ESTILOS GENERALES DEL SITIO ========== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--gris-claro);
+  color: var(--negro);
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== BARRA DE NAVEGACIÓN ========== */
+.navbar {
+  background-color: var(--azul);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  height: 80px;
+}
+
+.logo {
+  height: 60px;
+  border-radius: 5px; /* Bordes suavemente redondeados */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--blanco);
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: var(--amarillo);
+  color: var(--azul);
+  border-radius: 4px;
+}
+
+/* ========== CARRUSEL DE IMÁGENES (FADE) ========== */
+.contenedor-banner {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Altura reducida del banner */
+  overflow: hidden;
+}
+
+.carousel-fade {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fade-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Texto centrado sobre el carrusel */
+.bienvenida-sobre-banner {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  z-index: 10;
+  padding: 0 20px;
+}
+
+.bienvenida-sobre-banner h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bienvenida-sobre-banner p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== SECCIONES ========== */
+.seccion {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  padding: 40px 20px;
+  background-color: var(--blanco);
+  margin: 20px auto;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.seccion.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.seccion h1,
+.seccion h2 {
+  color: var(--azul);
+  margin-bottom: 20px;
+}
+
+/* ========== TARJETAS DE SERVICIOS ========== */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.tarjeta-servicio {
+  background-color: var(--blanco);
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-servicio h3 {
+  color: var(--azul);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.tarjeta-servicio p {
+  margin-bottom: 15px;
+}
+
+/* ========== BOTONES SECUNDARIOS ========== */
+.boton-secundario {
+  display: inline-block;
+  background-color: var(--amarillo);
+  color: var(--azul);
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boton-secundario:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* ========== PIE DE PÁGINA ========== */
+footer {
+  background-color: var(--azul);
+  color: var(--blanco);
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.footer-content a {
+  color: var(--amarillo);
+  text-decoration: none;
+}
+
+.footer-content img {
+  height: 30px;
+  margin: 0 10px;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: center;          /* Centrado horizontal */
+  align-items: center;              /* Alineación vertical entre checkbox y texto */
+  gap: 6px;                         /*  Antes estaba en 10px. Más cerca = más limpio */
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  width: fit-content;
+  flex-wrap: nowrap;               /*  Previene salto de línea */
+}
+.checkbox-container label {
+  color: #000;
+  white-space: nowrap;    /* Evita el salto de línea */
+  font-size: 14px;
+}
+.checkbox-container input[type="checkbox"] {
+  accent-color: var(--azul);     /* Color azul para el check */
+  margin-top: 4px;               /* Alineación vertical del checkbox */
+}
+
+.checkbox-container label {
+  color: #000;
+  line-height: 1.4;
+}
+
+.checkbox-container a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.checkbox-container a:hover {
+  color: var(--amarillo);
+}
+
+
+
+
+
+/* ========== (MÓVILES) ========== */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .bienvenida-sobre-banner h1 {
+    font-size: 2rem;
+  }
+
+  .bienvenida-sobre-banner p {
+    font-size: 1rem;
+
+ 

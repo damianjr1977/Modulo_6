@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco Cardona - Presupuesto</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <style>
+    .formulario {
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .formulario label {
+      display: block;
+      margin-bottom: 5px;
+      color: #003366;
+    }
+
+    .formulario input,
+    .formulario textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .formulario textarea {
+      resize: vertical;
+    }
+
+    .checkbox-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: left;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      accent-color: #003366;
+      margin-top: 4px;
+    }
+
+    .checkbox-container label {
+      color: #000000;
+      line-height: 1.4;
+    }
+
+    .checkbox-container a {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    .checkbox-container a:hover {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== MENÚ DE NAVEGACIÓN ========== -->
+  <header>
+    <nav class="navbar">
+      <img src="../img/logo.png" alt="Logo Banco Cardona" class="logo">
+      <ul class="nav-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="presupuesto.html" class="active">Presupuesto</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="../aviso-legal/aviso-legal.html">Aviso Legal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== FORMULARIO DE PRESUPUESTO ========== -->
+  <main>
+    <section class="seccion">
+      <h2>Solicita tu Presupuesto</h2>
+      <p>Rellena el siguiente formulario para recibir más información.</p>
+
+      <form action="#" method="post" class="formulario">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre...">
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{9}" placeholder="Ej: 666123456">
+
+        <label for="mensaje">Solicite más información:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntanos en qué estás interesado..."></textarea>
+
+        <!-- Checkbox de política de privacidad -->
+        <div class="checkbox-container">
+          <input type="checkbox" id="privacidad" name="privacidad" required>
+          <label for="privacidad">
+            He leído y acepto la <a href="../aviso-legal/aviso-legal.html" target="_blank">Política de Privacidad</a> de Banco Cardona.
+          </label>
+        </div>
+
+        <button type="submit" class="boton-secundario">Enviar solicitud</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ========== PIE DE PÁGINA ========== -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-icons">
+        <a href="#"><img src="../img/facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="../img/instagram-icon.png" alt="Instagram"></a>
+        <a href="#"><img src="../img/whatsapp-icon.png" alt="WhatsApp"></a>
+        <a href="#"><img src="../img/twitter-icon.png" alt="Twitter"></a>
+      </div>
+      <div class="company-info">
+        <p>Carretera Alfonso XIII, Urbanización San José</p>
+        <p>+34 689 46 61 14 | <a href="mailto:cardona2000@gmail.com">cardona2000@gmail.com</a></p>
+        <p><a href="../aviso-legal/aviso-legal.html">Aviso Legal</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
